@@ -1,0 +1,129 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --hue-normal: 160;
+    --hue-wrong: 0;
+    --hue-correct: 80;
+}
+
+body {
+    --hue: var(--hue-normal);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(var(--hue), 20%, 85%, .3);
+}
+
+body.correct {
+    --hue: var(--hue-correct);
+    background-color: hsl(var(--hue), 80%, 40%);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+    background-color: hsl(var(--hue), 80%, 50%);
+}
+
+.header {
+    font-size: 2.5rem;
+    margin-top: -80px;
+    margin-bottom: 80px;
+    letter-spacing: .5ch;
+}
+
+.small {
+    font-size: 1.2rem;
+    text-indent: 29px;
+}
+
+.container {
+    width: 600px;
+    max-width: 80%;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0;
+}
+
+.timer {
+    border: 3px solid #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 9px;
+}
+
+.question-number {
+    border: 2px solid black;
+    width: 20%;
+    margin-top: -42px;
+    padding: 10px;
+    margin-left: 75%;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.question {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.answer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px;
+}
+
+.btn {
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    background-color: hsl(var(--hue), 80%, 40%);
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+    background-color: hsl(var(--hue), 80%, 50%);
+    color: white;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.showScore {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.start-btn, .next-btn, .submit-btn {
+    margin: 3px;
+    width: 50%;
+}
+
+.hide {
+    display: none;
+}
